@@ -1,6 +1,7 @@
 html, body {
     height: 100%;
     margin: 0;
+    font-family: 'Single Day', cursive;
 }
 
 body {
@@ -11,7 +12,7 @@ body {
 }
 
 img {
-    width: 50%;
+    width: 30%;
 }
 
 #gif-image-yes {
@@ -51,6 +52,7 @@ iframe {
 button {
     padding: 10px 20px; /* Adjust padding */
     font-size: 16px; /* Adjust font size */
+    font-family: 'Single Day', cursive;
     color: white; /* Text color */
     border: none; /* Remove default border */
     border-radius: 0.25rem; /* Rounded corners */
