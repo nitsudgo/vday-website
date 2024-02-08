@@ -1,6 +1,9 @@
-const gifImage = document.getElementById('gif-image');
+const gifImageAsking = document.getElementById('gif-image-asking');
+const gifImageYes = document.getElementById('gif-image-yes');
+const gifImageNo = document.getElementById('gif-image-no');
 const promptText = document.getElementById('prompt-text');
 const buttonContainer = document.getElementById('button-container');
+const mapListing = document.getElementById('hidden-dinner-suggestions')
 
 let followupPromptChoices = [
     "Oh, having second thoughts? Was it something I said. Maybe take another look",
@@ -22,22 +25,27 @@ let hardNoCounter = 0;
 
 // If YES
 document.getElementById('yes').addEventListener('click', function() {
-    gifImage.src = './img/yes.gif'; // Change image
     buttonContainer.innerHTML = ""; // Hide buttons
+
+    // Change image
+    gifImageAsking.style.display = 'none';
+    gifImageNo.style.display = 'none';
+    gifImageYes.style.display = 'inline';
 
     // Change text to success message
     promptText.innerHTML = "GOOD CHOICE!!!!!<br />🤩🤩🤩🤩🤩🤩🤩🤩<br />"
     promptText.innerHTML += "Here are some ideas for lunch/dinner dates~"
 
     // Un-hide maps
-    const mapListing = document.getElementById('hidden-dinner-suggestions')
     mapListing.style.display = 'block';
 });
 
 
 // If NO
 document.getElementById('no').addEventListener('click', function() {
-    gifImage.src = './img/no.gif'; // Change image
+    // Change image
+    gifImageAsking.style.display = 'none';
+    gifImageNo.style.display = 'inline';
 
     // Change text to a random choice from a predefined list
     let newPrompt = followupPromptChoices.pop();
